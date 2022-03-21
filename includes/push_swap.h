@@ -15,6 +15,7 @@
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -25,8 +26,10 @@ typedef struct s_stack
 
 void    listerine(t_stack **stacka, int content);
 t_stack	*ft_new_stack(void *content);
-void    sa(t_stack **stacka);
-void    sb(t_stack **stackb);
+void    sa(t_stack **stacka, bool flag);
+void    sb(t_stack **stackb, bool flag);
 int	    ft_lsttsize(t_stack *lst);
+void    pa(t_stack **stacka, t_stack **stackb);
+void    pb(t_stack **stacka, t_stack **stackb);
 
 #endif

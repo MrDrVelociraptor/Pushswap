@@ -40,14 +40,16 @@ int main(int argc, char **argv)
         return (0);
     ft_fill_stack(&stacka, argv);
     printf("%d\n", ft_lsttsize(stacka));
-    sa(&stacka);
-    while (argv[i])
+    //sa(&stacka, 0);
+    pb(&stacka, &stackb);
+    pb(&stacka, &stackb);
+    pb(&stacka, &stackb);
+    while (stackb)
     {
-        printf("%d\n", stacka->content);
+        printf("%d ------- %d\n", stacka->content, stackb->content);
         stacka = stacka->next;
-        //printf("%d\n", ft_lsttsize(stacka));
+        stackb = stackb->next;
         i++;
     }
-    //printf("%d\n", ft_lsttsize(stacka));
     return (0);
 }
