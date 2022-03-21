@@ -10,26 +10,49 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "push_swap.h"
 
-typedef struct s_stack
+t_stack	*ft_new_stack(void *content)
 {
-    int             num;
-    struct t_stack  *next;
-    struct t_stack  *stacka;  
-    struct t_stack  *stackb;  
+	t_stack	*node;
 
-}   t_stack;
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if (!node)
+		return (0);
+	node->content = (int)content;
+    node->flag = 0;
+	node->next = 0;
+	return (node);
+}
 
-t_stack *listerine(int data)
+int	ft_lsttsize(t_stack *lst)
 {
-    t_stack *result;
+	int	position;
 
-    result = malloc(sizeof(t_stack));
-    if (!result)
-        return (0);
-    result->num = data;
-    result->next = 0;
-    return (result);
+	if (!lst)
+		return (0);
+	position = 0;
+	while (lst != 0)
+	{
+		position++;
+		lst = lst->next;
+	}
+	return (position);
+}
+
+void listerine(t_stack **stacka, int content)
+{
+    t_stack *curr;
+    t_stack *add_node;
+
+    add_node = malloc(sizeof(t_stack));
+    if (!add_node)
+        return ;
+    add_node->content = content;
+    add_node->flag = 0;
+    add_node->next = 0;
+    curr = *stacka;
+    while (curr->next)
+        curr = curr->next;
+    curr->next = add_node;
 }
