@@ -40,7 +40,7 @@ int	ft_lsttsize(t_stack *lst)
 	return (position);
 }
 
-void listerine(t_stack **stacka, int content)
+void listerine(t_stack **stacks, int content)
 {
     t_stack *curr;
     t_stack *add_node;
@@ -51,7 +51,7 @@ void listerine(t_stack **stacka, int content)
     add_node->content = content;
     add_node->flag = 0;
     add_node->next = 0;
-    curr = *stacka;
+    curr = *stacks;
     while (curr->next)
         curr = curr->next;
     curr->next = add_node;

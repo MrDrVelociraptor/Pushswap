@@ -32,24 +32,21 @@ int main(int argc, char **argv)
 {
     t_stack *stacka;
     t_stack *stackb;
-    int     i;
 
-    i = 1;
     stackb = NULL;
     if (argc < 3)
         return (0);
     ft_fill_stack(&stacka, argv);
-    printf("%d\n", ft_lsttsize(stacka));
-    //sa(&stacka, 0);
+    printf("Number of elements in stacka = %d\n", ft_lsttsize(stacka));
+    printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
     pb(&stacka, &stackb);
     pb(&stacka, &stackb);
     pb(&stacka, &stackb);
-    while (stackb)
+    while (stacka && stackb)
     {
-        printf("%d ------- %d\n", stacka->content, stackb->content);
+        printf("%d -------- %d\n", stacka->content, stackb->content);
         stacka = stacka->next;
         stackb = stackb->next;
-        i++;
     }
     return (0);
 }

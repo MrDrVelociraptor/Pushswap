@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+//swap the first 2 elements at the top of stacka, do nothing if only one of no elements
 void    sa(t_stack **stacka, bool flag)
 {
-    t_stack *tmp;
+    int x;
 
     if (stacka && (*stacka)->next) //checks if the first and second thing in the list are there
     {
-        tmp = (*stacka)->next; //tmp now equal to the second item in the list
-        (*stacka)->next = tmp->next; //
-        tmp->next = *stacka;
-        *stacka = tmp;
+        x = (*stacka)->content;
+        (*stacka)->content = (*stacka)->next->content;
+        (*stacka)->next->content = x;
     }
     if (flag)
         write(1, "sa\n", 3);
@@ -29,14 +28,13 @@ void    sa(t_stack **stacka, bool flag)
 
 void    sb(t_stack **stackb, bool flag)
 {
-    t_stack *tmp;
+    int x;
 
     if (stackb && (*stackb)->next)
     {
-        tmp = (*stackb)->next;
-        (*stackb)->next = tmp->next;
-        tmp->next = *stackb;
-        *stackb = tmp;
+        x = (*stackb)->content;
+        (*stackb)->content = (*stackb)->next->content;
+        (*stackb)->next->content = x;
     }
     if (flag)
         write(1, "sb\n", 3);
@@ -69,10 +67,10 @@ void    pb(t_stack **stacka, t_stack **stackb)
 
     if (*stacka)
     {
-        tmp = (*stacka)->next;
-        (*stacka)->next = *stackb;
-        *stackb = *stacka;
-        *stacka = tmp;
+        tmp = (*stacka)->next; //tmp points to second node
+        (*stacka)->next = *stackb; //stacka 1st node points to stackb 1st node instead of stacka 2nd
+        *stackb = *stacka; //stackb 1st node = stacka 1st node
+        *stacka = tmp; //stacka 1st node = tmp, which was orignal 2nd node
         write(1, "pb\n", 3);
     }
 }

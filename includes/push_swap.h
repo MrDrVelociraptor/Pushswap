@@ -31,5 +31,6 @@ void    sb(t_stack **stackb, bool flag);
 int	    ft_lsttsize(t_stack *lst);
 void    pa(t_stack **stacka, t_stack **stackb);
 void    pb(t_stack **stacka, t_stack **stackb);
+void    ra(t_stack **stacka, bool flag);
 
 #endif
