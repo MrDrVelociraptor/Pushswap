@@ -39,14 +39,12 @@ int main(int argc, char **argv)
     ft_fill_stack(&stacka, argv);
     printf("Number of elements in stacka = %d\n", ft_lsttsize(stacka));
     printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
-    pb(&stacka, &stackb);
-    pb(&stacka, &stackb);
-    pb(&stacka, &stackb);
-    while (stacka && stackb)
+    rra(&stacka, 1);
+    while (stacka)// && stackb)
     {
-        printf("%d -------- %d\n", stacka->content, stackb->content);
+        printf("%d\n", stacka->content);//, stackb->content);
         stacka = stacka->next;
-        stackb = stackb->next;
+        //stackb = stackb->next;
     }
     return (0);
 }

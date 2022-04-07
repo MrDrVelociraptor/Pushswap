@@ -11,11 +11,12 @@ FLAGS = -Wall -Werror -Wextra $(LIBS) $(HEADERS)
 all:
 	@make -s -C $(LIBFT)
 	@echo Compiling libft
-	@gcc $(SRC) $(FLAGS) 
+	@gcc $(SRC) $(FLAGS) -o pushswap 
 	@echo Good to go
 	
 
 clean:
+	@rm -f pushswap
 	@make fclean -s -C $(LIBFT)
 	@echo nothing here anymore, well, except .c
 

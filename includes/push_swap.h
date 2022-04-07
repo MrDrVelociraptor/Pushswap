@@ -32,5 +32,8 @@ int	    ft_lsttsize(t_stack *lst);
 void    pa(t_stack **stacka, t_stack **stackb);
 void    pb(t_stack **stacka, t_stack **stackb);
 void    ra(t_stack **stacka, bool flag);
+void    rb(t_stack **stackb, bool flag);
+void    rr(t_stack **stacka, t_stack **stackb);
+void    rra(t_stack **stacka, bool flag);
 
 #endif
