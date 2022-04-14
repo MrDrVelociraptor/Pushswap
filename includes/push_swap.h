@@ -17,12 +17,23 @@
 # include <stdio.h>
 # include <stdbool.h>
 
+# define MAX 2147483647
+
 typedef struct s_stack
 {
     int             content;
     int             flag;
-    struct s_stack  *next; 
+    struct s_stack  *next;
+    int             min;
+    int             max;
 }   t_stack;
+
+typedef struct s_data{
+    t_stack *stacka;
+    t_stack *stackb;
+    int     min;
+    int     max;
+}   t_data;
 
 void    listerine(t_stack **stacka, int content);
 t_stack	*ft_new_stack(void *content);
@@ -35,5 +46,7 @@ void    ra(t_stack **stacka, bool flag);
 void    rb(t_stack **stackb, bool flag);
 void    rr(t_stack **stacka, t_stack **stackb);
 void    rra(t_stack **stacka, bool flag);
+t_stack *find_max(t_data *data);
+int     find_min(t_stack **stacka);
 
 #endif

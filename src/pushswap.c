@@ -30,21 +30,15 @@ static void ft_fill_stack(t_stack **stacka, char **argv)
 
 int main(int argc, char **argv)
 {
-    t_stack *stacka;
-    t_stack *stackb;
+    t_data  data;
 
-    stackb = NULL;
     if (argc < 3)
         return (0);
-    ft_fill_stack(&stacka, argv);
-    printf("Number of elements in stacka = %d\n", ft_lsttsize(stacka));
-    printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
-    rra(&stacka, 1);
-    while (stacka)// && stackb)
-    {
-        printf("%d\n", stacka->content);//, stackb->content);
-        stacka = stacka->next;
-        //stackb = stackb->next;
-    }
+    ft_fill_stack(&data.stacka, argv);
+    printf("Number of elements in stacka = %d\n", ft_lsttsize(data.stacka));
+    //printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
+    find_max(&data);
+    printf("%d -------- %d\n", data.stacka->max, data.stacka->min);
+    //printf("%d\n", find_min(&stacka));
     return (0);
 }

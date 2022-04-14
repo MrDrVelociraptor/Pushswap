@@ -12,19 +12,6 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_new_stack(void *content)
-{
-	t_stack	*node;
-
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (0);
-	node->content = (int)content;
-    node->flag = 0;
-	node->next = 0;
-	return (node);
-}
-
 int	ft_lsttsize(t_stack *lst)
 {
 	int	position;

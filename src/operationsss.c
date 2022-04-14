@@ -20,15 +20,12 @@ void    rra(t_stack **stacka, bool flag)
     if ((*stacka)->next == NULL)
         return ;
     tmp = *stacka;
-    printf("%d\n", tmp->content);
     while (tmp->next)
     {
         first = tmp;
-        printf("%d ----- first is\n", first->content);
         tmp = tmp->next;
     }
     tmp->next = *stacka;
-    printf("%d -------- what\n", tmp->content);
     first->next = NULL;
     *stacka = tmp;
     if (flag)
