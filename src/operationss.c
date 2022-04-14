@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-void    ra(t_stack **stacka, bool flag)
+void    ra(t_data *data, bool flag)
 {
     t_stack *tmp;
     t_stack *last;
 
-    if ((*stacka)->next == NULL) //End if there is only one element
+    if (data->stacka->next == NULL) //End if there is only one element
         return ;
-    last = *stacka;
-    tmp = *stacka;
-    *stacka = (*stacka)->next;
+    last = data->stacka;
+    tmp = data->stacka;
+    data->stacka = data->stacka->next;
     while (tmp->next)
         tmp = tmp->next;
     last->next = NULL;
@@ -30,16 +30,16 @@ void    ra(t_stack **stacka, bool flag)
         write(1, "ra\n", 3);
 }
 
-void    rb(t_stack **stackb, bool flag)
+void    rb(t_data *data, bool flag)
 {
     t_stack *tmp;
     t_stack *last;
 
-    if ((*stackb)->next == NULL)
+    if (data->stackb->next == NULL)
         return ;
-    last = *stackb;
-    tmp = *stackb;
-    *stackb = (*stackb)->next;
+    last = data->stackb;
+    tmp = data->stackb;
+    data->stackb = data->stackb->next;
     while (tmp->next)
         tmp = tmp->next;
     last->next = NULL;
@@ -48,10 +48,10 @@ void    rb(t_stack **stackb, bool flag)
         write(1, "rb\n", 3);
 }
 
-void    rr(t_stack **stacka, t_stack **stackb)
+void    rr(t_data *data)
 {
-    ra(stacka, false);
-    rb(stackb, false);
+    ra(data, false);
+    rb(data, false);
     write(1, "rr\n", 3);
 }
 

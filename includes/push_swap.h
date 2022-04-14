@@ -24,8 +24,6 @@ typedef struct s_stack
     int             content;
     int             flag;
     struct s_stack  *next;
-    int             min;
-    int             max;
 }   t_stack;
 
 typedef struct s_data{
@@ -35,18 +33,18 @@ typedef struct s_data{
     int     max;
 }   t_data;
 
-void    listerine(t_stack **stacka, int content);
+void    listerine(t_data *data, int content);
 t_stack	*ft_new_stack(void *content);
-void    sa(t_stack **stacka, bool flag);
-void    sb(t_stack **stackb, bool flag);
+void    sa(t_data *data, bool flag);
+void    sb(t_data *data, bool flag);
 int	    ft_lsttsize(t_stack *lst);
-void    pa(t_stack **stacka, t_stack **stackb);
-void    pb(t_stack **stacka, t_stack **stackb);
-void    ra(t_stack **stacka, bool flag);
-void    rb(t_stack **stackb, bool flag);
-void    rr(t_stack **stacka, t_stack **stackb);
-void    rra(t_stack **stacka, bool flag);
+void    pa(t_data *data, bool flag);
+void    pb(t_data *data, bool flag);
+void    ra(t_data *data, bool flag);
+void    rb(t_data *data, bool flag);
+void    rr(t_data *data);
+void    rra(t_data *data, bool flag);
 t_stack *find_max(t_data *data);
-int     find_min(t_stack **stacka);
+int     find_min(t_data *data);
 
 #endif

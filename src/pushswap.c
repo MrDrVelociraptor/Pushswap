@@ -12,19 +12,19 @@
 
 #include "push_swap.h"
 
-static void ft_fill_stack(t_stack **stacka, char **argv)
+static void ft_fill_stack(t_data *data, char **argv)
 {
     int i;
 
     i = 1;
-    *stacka = malloc(sizeof(t_stack));
-    if (!(*stacka))
+    data->stacka = malloc(sizeof(t_stack));
+    if (!data->stacka)
         return ;
-    (*stacka)->content = ft_atoi(argv[i]);
-    (*stacka)->next = 0;
+    data->stacka->content = ft_atoi(argv[i]);
+    data->stacka->next = 0;
     while (argv[++i])
     {
-        listerine(stacka, ft_atoi(argv[i]));
+        listerine(data, ft_atoi(argv[i]));
     }
 }
 
@@ -34,11 +34,23 @@ int main(int argc, char **argv)
 
     if (argc < 3)
         return (0);
-    ft_fill_stack(&data.stacka, argv);
+    ft_fill_stack(&data, argv);
     printf("Number of elements in stacka = %d\n", ft_lsttsize(data.stacka));
     //printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
     find_max(&data);
-    printf("%d -------- %d\n", data.stacka->max, data.stacka->min);
-    //printf("%d\n", find_min(&stacka));
+    printf("%d -------- %d\n", data.max, data.min);
+    pb(&data, 1);
+    pb(&data, 1);
+    pb(&data, 1);
+    pb(&data, 1);
+    pb(&data, 1);
+    pb(&data, 1);
+    printf("%d -------- %d\n", data.max, data.min);
+    while (data.stacka && data.stackb)
+    {
+        printf("%d - - --- -- %d\n", data.stacka->content, data.stackb->content);
+        data.stacka = data.stacka->next;
+        data.stackb = data.stackb->next;
+    }
     return (0);
 }

@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-void    rra(t_stack **stacka, bool flag)
+void    rra(t_data *data, bool flag)
 {
     t_stack *tmp;
     t_stack *first;
 
-    if ((*stacka)->next == NULL)
+    if (data->stacka->next == NULL)
         return ;
-    tmp = *stacka;
+    tmp = data->stacka;
     while (tmp->next)
     {
         first = tmp;
         tmp = tmp->next;
     }
-    tmp->next = *stacka;
+    tmp->next = data->stacka;
     first->next = NULL;
-    *stacka = tmp;
+    data->stacka = tmp;
     if (flag)
         write(1, "rra\n", 4);
 }
