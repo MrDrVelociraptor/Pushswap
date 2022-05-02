@@ -27,7 +27,10 @@ void    ra(t_data *data, bool flag)
     last->next = NULL;
     tmp->next = last;
     if (flag)
+    {
         write(1, "ra\n", 3);
+        data->operations++;
+    }
 }
 
 void    rb(t_data *data, bool flag)
@@ -45,7 +48,10 @@ void    rb(t_data *data, bool flag)
     last->next = NULL;
     tmp->next = last;
     if (flag)
+    {
         write(1, "rb\n", 3);
+        data->operations++;
+    }
 }
 
 void    rr(t_data *data)
@@ -53,5 +59,6 @@ void    rr(t_data *data)
     ra(data, false);
     rb(data, false);
     write(1, "rr\n", 3);
+    data->operations++;
 }
 

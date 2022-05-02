@@ -15,7 +15,7 @@
 static void ft_fill_stack(t_data *data, char **argv)
 {
     int i;
-
+    
     i = 1;
     data->stacka = malloc(sizeof(t_stack));
     if (!data->stacka)
@@ -31,26 +31,15 @@ static void ft_fill_stack(t_data *data, char **argv)
 int main(int argc, char **argv)
 {
     t_data  data;
+    int     i;
 
+    i = 0;
+    data.operations = 0;
     if (argc < 3)
         return (0);
     ft_fill_stack(&data, argv);
     printf("Number of elements in stacka = %d\n", ft_lsttsize(data.stacka));
-    //printf("Number of elements in stackb = %d\n", ft_lsttsize(stackb));
     find_max(&data);
-    printf("%d -------- %d\n", data.max, data.min);
-    pb(&data, 1);
-    pb(&data, 1);
-    pb(&data, 1);
-    pb(&data, 1);
-    pb(&data, 1);
-    pb(&data, 1);
-    printf("%d -------- %d\n", data.max, data.min);
-    while (data.stacka && data.stackb)
-    {
-        printf("%d - - --- -- %d\n", data.stacka->content, data.stackb->content);
-        data.stacka = data.stacka->next;
-        data.stackb = data.stackb->next;
-    }
+    sort5d(&data);
     return (0);
 }

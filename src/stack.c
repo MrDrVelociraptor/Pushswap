@@ -43,3 +43,4 @@ void listerine(t_data *data, int content)
         curr = curr->next;
     curr->next = add_node;
 }
+

@@ -31,6 +31,8 @@ typedef struct s_data{
     t_stack *stackb;
     int     min;
     int     max;
+    int     operations;
+    int     *randy;
 }   t_data;
 
 void    listerine(t_data *data, int content);
@@ -45,6 +47,9 @@ void    rb(t_data *data, bool flag);
 void    rr(t_data *data);
 void    rra(t_data *data, bool flag);
 t_stack *find_max(t_data *data);
-int     find_min(t_data *data);
+bool    is_sorted(t_data *data);
+int     node_index(t_data *data, int min);
+void    sort3d(t_data *data);
+void    sort5d(t_data *data);
 
 #endif

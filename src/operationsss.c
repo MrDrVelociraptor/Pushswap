@@ -29,5 +29,8 @@ void    rra(t_data *data, bool flag)
     first->next = NULL;
     data->stacka = tmp;
     if (flag)
+    {
         write(1, "rra\n", 4);
+        data->operations++;
+    }
 }
