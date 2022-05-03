@@ -32,7 +32,6 @@ typedef struct s_data{
     int     min;
     int     max;
     int     operations;
-    int     *randy;
 }   t_data;
 
 void    listerine(t_data *data, int content);
@@ -51,5 +50,6 @@ bool    is_sorted(t_data *data);
 int     node_index(t_data *data, int min);
 void    sort3d(t_data *data);
 void    sort5d(t_data *data);
+void    rot_min(t_data *data);
 
 #endif

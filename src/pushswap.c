@@ -31,15 +31,20 @@ static void ft_fill_stack(t_data *data, char **argv)
 int main(int argc, char **argv)
 {
     t_data  data;
-    int     i;
 
-    i = 0;
     data.operations = 0;
     if (argc < 3)
         return (0);
     ft_fill_stack(&data, argv);
     printf("Number of elements in stacka = %d\n", ft_lsttsize(data.stacka));
-    find_max(&data);
-    sort5d(&data);
+    //find_max(&data);
+    rot_min(&data);
+    while (data.stacka)
+    {
+        printf("List A %d\n", data.stacka->content);
+        data.stacka = data.stacka->next;
+    }
+    printf("Operations used = %d\n", data.operations);
+    
     return (0);
 }
