@@ -34,3 +34,26 @@ void    rra(t_data *data, bool flag)
         data->operations++;
     }
 }
+
+void    rrb(t_data *data, bool flag)
+{
+    t_stack *tmp;
+    t_stack *first;
+
+    if (data->stackb->next == NULL)
+        return ;
+    tmp = data->stackb;
+    while (tmp->next)
+    {
+        first = tmp;
+        tmp = tmp->next;
+    }
+    tmp->next = data->stackb;
+    first->next = NULL;
+    data->stackb = tmp;
+    if (flag)
+    {
+        write(1, "rrb\n", 4);
+        data->operations++;
+    }
+}

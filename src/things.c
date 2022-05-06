@@ -32,12 +32,15 @@ t_stack *find_max(t_data *data)
 
 bool    is_sorted(t_data *data)
 {
-    if (data->stacka == NULL || data->stacka->next == NULL)
+    t_stack *tmp;
+
+    tmp = data->stacka;
+    if (tmp == NULL || tmp->next == NULL)
         return (true);
-    while (data->stacka->next != NULL)
+    while (tmp->next != NULL)
     {
-        if (data->stacka->content < data->stacka->next->content)
-            data->stacka = data->stacka->next;
+        if (tmp->content < tmp->next->content)
+            tmp = tmp->next;
         else
             return (false);
     }

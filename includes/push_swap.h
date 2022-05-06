@@ -24,6 +24,7 @@ typedef struct s_stack
     int             content;
     int             flag;
     struct s_stack  *next;
+    struct s_stack  *prev;
 }   t_stack;
 
 typedef struct s_data{
@@ -45,6 +46,7 @@ void    ra(t_data *data, bool flag);
 void    rb(t_data *data, bool flag);
 void    rr(t_data *data);
 void    rra(t_data *data, bool flag);
+void    rrb(t_data *data, bool flag);
 t_stack *find_max(t_data *data);
 bool    is_sorted(t_data *data);
 int     node_index(t_data *data, int min);
