@@ -61,7 +61,6 @@ void    pa(t_data *data, bool flag)
     if (data->stackb)
     {
         curr = data->stackb->next;
-        data->stackb->next = data->stacka;
         data->stacka = data->stackb;
         data->stackb = curr;
     }
@@ -79,7 +78,6 @@ void    pb(t_data *data, bool flag)
     if (data->stacka)
     {
         curr = data->stacka->next; //tmp points to second node
-        data->stacka->next = data->stackb; //stacka 1st node points to stackb 1st node instead of stacka 2nd
         data->stackb = data->stacka; //stackb 1st node = stacka 1st node
         data->stacka = curr; //stacka 1st node = tmp, which was orignal 2nd node
     }
