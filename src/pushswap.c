@@ -37,9 +37,18 @@ int main(int argc, char **argv)
         return (0);
     ft_fill_stack(&data, argv);
     printf("Number of elements in stacka = %d\n", ft_lsttsize(data.stacka));
-    printf("Number of elements in stackb = %d\n", ft_lsttsize(data.stackb));
-    find_max(&data);
-    printf("Max = %d ------- Min = %d\n", data.max, data.min);
-    rot_min(&data);
+    index_list(&data);
+    //sort3d(&data);
+    radx(&data);
+    
+    while (data.stacka)
+    {
+        printf("Value = %d ---- index = %d\n", data.stacka->content, data.stacka->index);
+        data.stacka = data.stacka->next;
+    }
+    printf("Operations used after sort = %d\n", data.operations);
+    //find_max(&data);
+    //printf("Max = %d ------- Min = %d\n", data.max, data.min);
+    //rot_min(&data);
     return (0);
 }

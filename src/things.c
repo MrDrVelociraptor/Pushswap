@@ -103,5 +103,5 @@ void    sort5d(t_data *data)
     sort3d(data);
     pa(data, 1);
     pa(data, 1);
-    //printf("Operations used = %d\n", data->operations);
+    printf("Operations used after 5 sort = %d\n", data->operations);
 }

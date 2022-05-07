@@ -23,6 +23,7 @@ typedef struct s_stack
 {
     int             content;
     int             flag;
+    int             index;
     struct s_stack  *next;
     struct s_stack  *prev;
 }   t_stack;
@@ -53,5 +54,8 @@ int     node_index(t_data *data, int min);
 void    sort3d(t_data *data);
 void    sort5d(t_data *data);
 void    rot_min(t_data *data);
+int     get_index(t_data *data, int n);
+void    index_list(t_data *data);
+void    radx(t_data *data);
 
 #endif
