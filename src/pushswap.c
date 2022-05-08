@@ -47,8 +47,5 @@ int main(int argc, char **argv)
         data.stacka = data.stacka->next;
     }
     printf("Operations used after sort = %d\n", data.operations);
-    //find_max(&data);
-    //printf("Max = %d ------- Min = %d\n", data.max, data.min);
-    //rot_min(&data);
     return (0);
 }
